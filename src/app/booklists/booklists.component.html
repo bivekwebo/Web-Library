@@ -1,0 +1,22 @@
+<form class="form-inline">
+    <input class="form-control" name="searchInput" placeholder="Search" #searchInput='ngModel' [(ngModel)]="searchText" style="width: 80%;">
+    <button style="margin-left: 10px;"(click)="searchText=''"class="btn btn-outline-primary">X</button>
+</form>
+<table class= "table table-hover">
+    <thead>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Price</th>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let book of list">
+        <tr  *ngIf='filterCondition(book)' >
+            <td (click)="onEdit(book)">{{book.name}}</td>
+            <td (click)="onEdit(book)">{{book.author}}</td>
+            <td (click)="onEdit(book)">{{book.price}}</td>
+           
+            <td (click)="onDelete(book.id)"><a class="btn text-danger"><i class= "fa fa-trash"></i></a></td>
+        </tr>
+    </ng-container>
+    </tbody>
+</table>

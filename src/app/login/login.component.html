@@ -1,0 +1,51 @@
+<div *ngIf = "!isSignedIn">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img [src]=img id="icon" alt="User Icon" /><br>
+      <h2>Sign Up</h2>
+    </div>
+
+    <!-- Login Form -->
+    <form>
+      <input type="text" id="login" class="fadeIn second" name="login" placeholder="Email"[(ngModel)]="emailSignup">
+      <input type="text" id="password" class="fadeIn third" name="login" placeholder="Password"  [(ngModel)]="passwordSignup">
+      <input type="submit" class="fadeIn fourth" value="Log In" (click)="onSignup(emailSignup,passwordSignup)">
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+        <a routerLink="">Click here to Sign In</a>
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+
+<signedin *ngIf = "isSignedIn" (isLogout)='handlelogout()'></signedin>
+
+<!-- 
+
+<!-- <div *ngIf = "!isSignedIn">
+<h1>SignUP</h1><br>
+<input class="form-control" type="text " [(ngModel)]="emailSignup"/>
+<input    class="form-control"type="text"  [(ngModel)]="passwordSignup"/>
+<button class= "btn btn-outline-primary"(click)="onSignup(emailSignup,passwordSignup)">Signup</button>
+</div>
+<a routerLink="">SignIn</a>
+
+<signedin *ngIf = "isSignedIn" (isLogout)='handlelogout()'></signedin> -->
+
+
+
+
