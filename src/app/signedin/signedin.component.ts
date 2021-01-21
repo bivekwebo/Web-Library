@@ -17,7 +17,7 @@ export class SignedinComponent implements OnInit {
   ngOnInit(): void {
   }
   logout(){
-    this.firebaseService.logout()
-    this.isLogout.emit()
+    this.firebaseService.logout();
+    this.isLogout.emit();
   }
 }
